@@ -1,0 +1,238 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif; /* Default fallback */
+    background: #063206; /* Dark green background */
+    background-image: url(background.png);
+    background-size: cover; /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center; 
+    color: #ffffff; /* White text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.container {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 1;
+}
+.logo-container {
+    width: 30vw;
+    height: 30vw;
+    max-width: 200px;
+    max-height: 200px;
+    min-width: 100px;
+    min-height: 100px;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    opacity: 0; /* Initially hidden */
+}
+.logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.coming-soon {
+    text-align: center;
+    margin-bottom: 70px;
+    opacity: 0; /* Initially hidden */
+    
+}
+.coming-soon p {
+    font-family: 'Bebas Neue', Arial, sans-serif;
+    margin: 5px 0;
+    font-size: calc(2vw + 6.6px);
+    letter-spacing: 1px;
+    opacity: 0; /* Initially hidden */
+}
+.coming-soon p:last-child {
+    font-size: calc(2vw + 18px);
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+.footer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+.footer span {
+    font-size: calc(0.5vw + 6px);
+    letter-spacing: 2px;
+    opacity: 0; /* Initially hidden */
+}
+.side-text {
+    position: absolute;
+    font-family: 'Bebas Neue', Arial, sans-serif;
+    font-size: calc(0.8vw + 4px);
+    letter-spacing: 2px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    opacity: 0; /* Initially hidden */
+}
+.science {
+    left: 60px;
+    top: 50%;
+    font-family: 'Bebas Neue', Arial, sans-serif;
+    transform: translateY(-50%) rotate(180deg);
+    letter-spacing: 4px;
+}
+.art {
+    right: 60px;
+    top: 50%;
+    font-family: 'Bebas Neue', Arial, sans-serif;
+    transform: translateY(-50%) rotate(360deg);
+    letter-spacing: 4px;
+}
+.dots {
+    position: absolute;
+    bottom: 5%;
+    right: 5%; /* Align to the right */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.dots span {
+    margin: 0 3px;
+    font-size: calc(1vw + 12px);
+    opacity: 0; /* Initially hidden */
+}
+/* Keyframes for animations */
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+    }
+    20%, 22%, 24%, 55% {
+        opacity: 0;
+    }
+}
+@keyframes flicker-different {
+    0%, 10%, 40%, 50%, 60%, 80%, 90%, 100% {
+        opacity: 0.7;
+    }
+    5%, 15%, 45%, 55%, 65%, 75%, 85%, 95% {
+        opacity: 0;
+    }
+}
+@keyframes fadeInhalf {
+    to {
+        opacity: 0.4;
+    }
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+/* Applying animations */
+.flicker-group {
+    animation: flicker 1s linear forwards 0.4s; /* Start after 1 seconds */
+    animation-fill-mode: forwards;
+}
+.flicker-group h1 {
+    animation: flicker 1s linear forwards 0.7s; /* Start after 1 seconds */
+    animation-fill-mode: forwards;
+}
+.flicker-group p {
+    animation: flicker 1s linear forwards 1s; /* Start after 1 seconds */
+    animation-fill-mode: forwards;
+}
+.flicker-text {
+    animation: flicker 1s linear forwards 1s; /* Start after 2 seconds */
+    animation-fill-mode: forwards;
+}
+.flicker-different {
+    animation: flicker-different 1s linear forwards 1s; /* Start after 2 seconds */
+    animation-fill-mode: forwards;
+}
+.science {
+    animation: fadeInhalf 1s ease-in forwards 1s; /* Fade in after 2 seconds */
+}
+.art {
+    animation: fadeInhalf 1s ease-in forwards 1s; /* Fade in after 2 seconds */
+}
+/* Media Queries for Different Screen Sizes */
+@media (max-width: 1024px) {
+    .logo-container {
+        width: 35vw;
+        height: 35vw;
+    }
+    .coming-soon p {
+        font-size: calc(2.5vw + 6.6px);
+    }
+    .coming-soon p:last-child {
+        font-size: calc(2.5vw + 18px);
+    }
+    .footer span {
+        font-size: calc(1vw + 8px);
+    }
+    .side-text {
+        font-size: calc(1vw + 4px);
+    }
+    .dots span {
+        font-size: calc(1.5vw + 12px);
+    }
+}
+@media (max-width: 768px) {
+    .logo-container {
+        width: 40vw;
+        height: 40vw;
+    }
+    .coming-soon p {
+        font-size: calc(3vw + 9px);
+    }
+    .coming-soon p:last-child {
+        font-size: calc(3vw + 18px);
+    }
+    .footer span {
+        font-size: calc(1.5vw + 8px);
+    }
+    .side-text {
+        font-size: calc(1.5vw + 4px);
+    }
+    .dots span {
+        font-size: calc(2vw + 12px);
+    }
+}
+@media (max-width: 480px) {
+    .logo-container {
+        width: 50vw;
+        height: 50vw;
+    }
+    .coming-soon p {
+        font-size: calc(3vw + 10px);
+    }
+    .coming-soon p:last-child {
+        font-size: calc(3vw + 18px);
+    }
+    .footer {
+        flex-direction: column;
+    }
+    
+    .footer span {
+        font-size: calc(2vw + 8px);
+        margin-bottom: 10px;
+    }
+    .side-text {
+        font-size: calc(2vw + 4px);
+    }
+    .dots {
+        right: 5%;
+    }
+    .dots span {
+        font-size: calc(2.5vw + 12px);
+    }
+}
