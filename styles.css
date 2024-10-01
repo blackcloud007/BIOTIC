@@ -44,6 +44,9 @@ body, html {
     height: 100%;
     object-fit: contain;
 }
+.dotss{
+    display: none;
+}
 .coming-soon {
     text-align: center;
     margin-bottom: 70px;
@@ -52,19 +55,25 @@ body, html {
 }
 .coming-soon p {
     font-family: 'Bebas Neue', Arial, sans-serif;
-    margin: 5px 0;
+    margin: 0; /* Remove default margin */
+    line-height: 0; /* Adjust line height to reduce gap */
     font-size: calc(2vw + 6.6px);
     letter-spacing: 1px;
     opacity: 0; /* Initially hidden */
+    display: inline-block;
+    width: 100%; /* Ensure both lines have the same width */
+    text-align: center; /* Center the text */
 }
 .coming-soon p:last-child {
     font-size: calc(2vw + 18px);
     letter-spacing: 2px;
-    font-weight: bold;
-}
+    font-weight: normal; /* Reduce the thickness */
+    margin-top: 0; /* Ensure no extra margin at the top */
+    line-height: 1.2; /* Ensure consistent line height */}
 .footer {
     display: flex;
     justify-content: space-around;
+    font-family: 'Bebas Neue', Arial, sans-serif;
     width: 100%;
     max-width: 600px;
     margin-bottom: 20px;
@@ -212,6 +221,14 @@ body, html {
         width: 50vw;
         height: 50vw;
     }
+    /* .coming-soon{
+        margin-left: 200px;
+        margin-right: 200px;
+    } */
+     .coming-soon{
+        margin-bottom: 20px;
+
+     }
     .coming-soon p {
         font-size: calc(3vw + 10px);
     }
@@ -224,15 +241,25 @@ body, html {
     
     .footer span {
         font-size: calc(2vw + 8px);
-        margin-bottom: 10px;
+        margin-bottom: 30px;
     }
     .side-text {
         font-size: calc(2vw + 4px);
     }
     .dots {
-        right: 5%;
+        display:none;        
     }
     .dots span {
         font-size: calc(2.5vw + 12px);
     }
+    .dotss{
+        display: flex;
+        justify-content: center;
+     }
+    .dotss span{
+        flex-direction: column;     
+        font-size: calc(2.5vw + 12px);
+
+    }
+
 }
